@@ -23,9 +23,9 @@ func main() {
 
 	go do(ctx, done)
 
-	//<-done // không khuyến khích (blocking operation)
+	//<-done // dont' do this (can make blocking operation)
 
-	//recommended (avoid blocking forever)
+	//recommended (avoid blocking forever by handling timeout)
 	select {
 	case <-done:
 	case <-time.After(time.Second):
