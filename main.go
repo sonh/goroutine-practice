@@ -25,7 +25,7 @@ func main() {
 
 	//<-done // không khuyến khích (blocking operation)
 
-	//
+	//recommended (avoid blocking forever)
 	select {
 	case <-done:
 	case <-time.After(time.Second):
